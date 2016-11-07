@@ -22,10 +22,12 @@ public class SimpleStackImpl implements SimpleStack {
     }
 
     public Item peek() throws EmptyStackException{
-        return (Item) wrappedStack.get(0);
+        return (Item) wrappedStack.get(wrappedStack.size()-1);
     }
 
     public Item pop() throws EmptyStackException{
-        return (Item) wrappedStack.get(wrappedStack.size()-1);
+        Item item = peek();
+        wrappedStack.remove(wrappedStack.size()-1);
+        return item;
     }
 }
