@@ -6,7 +6,7 @@ package chrs;
 public class Item {
     private Object value;
 
-    Item(Object value){
+    public Item(Object value){
         setValue(value);
     }
 

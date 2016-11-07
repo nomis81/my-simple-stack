@@ -7,7 +7,7 @@ import java.util.EmptyStackException;
  * Created by 21506406 on 03/11/2016.
  */
 public class SimpleStackImpl implements SimpleStack {
-    ArrayList<Object> wrappedStack = new ArrayList<Object>();
+    private ArrayList<Object> wrappedStack = new ArrayList<Object>();
 
     public boolean isEmpty(){
         return wrappedStack.isEmpty();
@@ -22,12 +22,20 @@ public class SimpleStackImpl implements SimpleStack {
     }
 
     public Item peek() throws EmptyStackException{
-        return (Item) wrappedStack.get(wrappedStack.size()-1);
+        if(wrappedStack.size() > 0){
+            return (Item) wrappedStack.get(wrappedStack.size()-1);
+        }
+        else throw new EmptyStackException();
+
     }
 
     public Item pop() throws EmptyStackException{
-        Item item = peek();
-        wrappedStack.remove(wrappedStack.size()-1);
-        return item;
+        if(wrappedStack.size() > 0){
+            Item item = peek();
+            wrappedStack.remove(wrappedStack.size()-1);
+            return item;
+        }
+        else throw new EmptyStackException();
+
     }
 }

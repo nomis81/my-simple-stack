@@ -21,7 +21,7 @@ public class SimpleStackImplTest {
     }
 
     @Test
-    public void getSize() throws Exception {
+    public void testGetSize() throws Exception {
         // Given
         SimpleStack stack = new SimpleStackImpl();
         // Then
@@ -33,9 +33,10 @@ public class SimpleStackImplTest {
     }
 
     @Test
-    public void push(Item item) throws Exception {
+    public void testPush() throws Exception {
         // Given
         SimpleStack stack = new SimpleStackImpl();
+        Item item = new Item(0);
         stack.push(item);
         // Then
         assertSame(item, stack.peek());
@@ -46,7 +47,7 @@ public class SimpleStackImplTest {
     }
 
     @Test(expected = EmptyStackException.class)
-    public void peek() throws Exception {
+    public void testPeek() throws Exception {
         // Given
         SimpleStack stack = new SimpleStackImpl();
         Item item = new Item(0);
@@ -63,8 +64,8 @@ public class SimpleStackImplTest {
         stack.peek();
     }
 
-    @Test
-    public void pop() throws Exception {
+    @Test(expected = EmptyStackException.class)
+    public void testPop() throws Exception {
         // Given
         SimpleStack stack = new SimpleStackImpl();
         Item item = new Item(0);
