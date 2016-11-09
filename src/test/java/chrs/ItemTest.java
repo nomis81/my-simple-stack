@@ -23,5 +23,5 @@ public class ItemTest {
         assertSame(1, item.getValue() );
     }
     /* #3 */
-    aze
+    azeezr
 }
