@@ -38,4 +38,7 @@ public class SimpleStackImpl implements SimpleStack {
         else throw new EmptyStackException();
 
     }
+    /* un commentaire répondant à l'exigence
+       @return
+     */
 }
