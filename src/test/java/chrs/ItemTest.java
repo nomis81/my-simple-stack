@@ -22,4 +22,6 @@ public class ItemTest {
         // Then
         assertSame(1, item.getValue() );
     }
+    /* #3 */
+    aze
 }
